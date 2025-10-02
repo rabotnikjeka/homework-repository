@@ -93,5 +93,5 @@ switch (month) {
     console.log("Это осенний месяц");
     break;
   default:
-    month = "Такого месяца нет";
+    console.log("Такого месяца нет");
 }
