@@ -65,9 +65,9 @@ const personInfo = {
   userCity: "Samara",
 };
 
-function abc(object, key) {
+function newObjectExcept(object, key) {
   const { [key]: remove, ...rest } = object;
   return rest;
 }
 
-console.log(abc(personInfo, "userCity"));
+console.log(newObjectExcept(personInfo, "userCity"));
