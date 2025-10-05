@@ -2,13 +2,11 @@
 
 const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const sqrtNumers = someNumbers.map((number) => number * number);
+const squaredNumers = someNumbers.map((number) => number * number);
 
-console.log(sqrtNumers);
+console.log(squaredNumers);
 
 //Второе задание
-
-///Первый вариант
 
 const arrNumbers = [1, 5, 1, 2, 3, 4, 3, 2, 5, 5, 1];
 
@@ -19,55 +17,15 @@ const filterNumbers = arrNumbers.filter((num, index) => {
 });
 console.log(filterNumbers);
 
-///Второй вариант
-
-for (let y = 0; y < arrNumbers.length; y++) {
-  for (let z = y + 1; z < arrNumbers.length; z++) {
-    if (arrNumbers[y] === arrNumbers[z]) {
-      arrNumbers[z] = null;
-    }
-  }
-}
-const filteredNumbers = arrNumbers.filter((num) => num !== null);
-console.log(filteredNumbers);
-
 //Третье задание
 
-const sumArr = someNumbers.reduce((total, number) => (total = total + number), 0);
+const sumArr = someNumbers.reduce((total, number) => total + number, 0);
 
 console.log(sumArr);
 
 //Четвертое задание
 
 ///Первый вариант
-
-[
-  someNumbers[0],
-  someNumbers[1],
-  someNumbers[2],
-  someNumbers[3],
-  someNumbers[4],
-  someNumbers[5],
-  someNumbers[6],
-  someNumbers[7],
-  someNumbers[8],
-] = [
-  someNumbers[8],
-  someNumbers[7],
-  someNumbers[6],
-  someNumbers[5],
-  someNumbers[4],
-  someNumbers[3],
-  someNumbers[2],
-  someNumbers[1],
-  someNumbers[0],
-];
-
-console.log(someNumbers);
-
-someNumbers.reverse();
-
-///Второй вариант
 
 let i = 0;
 let j = someNumbers.length - 1;
@@ -82,7 +40,8 @@ while (i < j) {
 
 console.log(someNumbers);
 
-/// Третий вариант
+/// Второй вариант
+
 someNumbers.reverse();
 
 let reversed = [];
