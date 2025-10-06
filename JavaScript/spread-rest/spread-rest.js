@@ -3,10 +3,10 @@
 const numbers = [1, 2, 3, 4, 5];
 
 function avg(...numb) {
-  return numbers.reduce((total, num) => total + num) / numbers.length;
+  return numb.reduce((total, num) => total + num) / numbers.length;
 }
 
-console.log(avg(numbers));
+console.log(avg(...numbers));
 
 //Второе задание
 
