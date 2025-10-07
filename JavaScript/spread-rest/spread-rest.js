@@ -3,7 +3,7 @@
 const numbers = [1, 2, 3, 4, 5];
 
 function avg(...numb) {
-  return numb.reduce((total, num) => total + num) / numbers.length;
+  return numb.reduce((total, num) => total + num) / num.length;
 }
 
 console.log(avg(...numbers));
