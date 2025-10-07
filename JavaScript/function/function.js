@@ -98,4 +98,5 @@ function bubbleSort(arr) {
   }
   console.log(arr);
 }
+
 bubbleSort(arrOfNumbers);
