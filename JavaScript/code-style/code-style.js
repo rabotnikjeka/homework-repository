@@ -80,38 +80,31 @@ console.log(totalPrice);
 
 //4 задание
 
-userInfo = {
+const userInfo = {
   userName: "max",
   userEmail: "123@123.com",
   userPassword: "password",
 };
 
 function validateForm(info) {
-  const inputUserName = prompt("Введите имя");
-  if (inputUserName === null || inputUserName === "") {
-    console.log("Вы не ввели имя");
-    return;
-  } else if (inputUserName !== info.userName) {
-    console.log("Нет такого пользователя");
-    return;
+  if (info.userName === null || info.userName === "") {
+    return "Вы не ввели имя";
   }
-  const inputUserEmail = prompt("Введите адрес электронной почты");
-  if (inputUserEmail === null || inputUserEmail === "") {
-    console.log("Вы не ввели адрес электронной почты");
-    return;
-  } else if (inputUserEmail !== info.userEmail) {
-    console.log("Неверный адрес электронной почты");
-    return;
+  if (info.inputUserEmail === null || info.inputUserEmail === "") {
+    return "Вы не ввели адрес электронной почты";
   }
-  const inputUserPassword = prompt("Введите пароль");
-  if (inputUserPassword === null || inputUserPassword === "") {
-    console.log("Вы не ввели пароль");
-    return;
-  } else if (inputUserPassword !== info.userPassword) {
-    console.log("Неверный пароль");
-    return;
+  if (info.userPassword === null || info.userPassword === "") {
+    return "Вы не ввели пароль";
+  } else if (info.userName !== "max") {
+    return "Неверное имя пользователя";
   }
-  console.log("Форма успешно отправлена!");
+  if (info.userEmail !== "123@123.com") {
+    return "Неверный адрес электронной почты";
+  }
+  if (info.userPassword !== "password") {
+    return "Неверный пароль";
+  }
+  return "Форма успешно отправлена!";
 }
 
-validateForm(userInfo);
+console.log(validateForm(userInfo));
