@@ -1,0 +1,156 @@
+body {
+  background-color: rgb(31, 31, 31);
+  font-family: "Manrope", sans-serif;
+}
+.start-test {
+  display: none;
+}
+.container .questions .radio-button {
+  display: none;
+}
+.container .questions .open-question {
+  display: none;
+}
+.submit-button {
+  display: none;
+}
+.next-button {
+  display: none;
+}
+.confirm-button {
+  display: none;
+}
+.your-score {
+  display: none;
+}
+.container .active {
+  display: block;
+}
+.container .button {
+  background-color: rgb(98, 133, 58);
+  border: 3px solid rgb(84, 114, 51);
+  color: rgb(255, 255, 255);
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 18px;
+  max-width: 220px;
+  width: 100%;
+}
+.container .button:hover {
+  box-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+
+.container {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 25px;
+  background-color: white;
+}
+.container .start-page {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.container .start-page .start-test-button {
+  display: flex;
+  justify-content: center;
+}
+.container .start-page .main-title-wrapper .main-title {
+  margin: 0;
+  font-size: 48px;
+  text-align: center;
+}
+
+.container .questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .questions h2 {
+  text-align: center;
+  margin: 0;
+}
+.container .next-button-warapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.container .confirm-button-warapper {
+  display: flex;
+  justify-content: center;
+}
+.container .questions .radio-button input {
+  display: none;
+}
+.container .questions .radio-button input:checked + label {
+  background-color: rgb(32, 77, 7);
+}
+.container .questions .radio-button .correct + .option {
+  background-color: rgb(126, 175, 0);
+  border: 3px solid green;
+}
+.container .questions .radio-button .incorrect + .option {
+  background-color: rgb(226, 95, 43);
+  border: 3px solid red;
+}
+.container .questions .open-question .input-wrapper .correct {
+  border: 3px solid green;
+}
+.container .questions .open-question .input-wrapper .incorrect {
+  border: 3px solid red;
+}
+.container .questions .radio-button.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.container .questions .option {
+  background-color: rgba(32, 77, 7, 0.541);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+}
+.container .questions .option:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+.container .questions .open-question.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.container .questions .open-question label {
+  text-align: center;
+}
+.container .questions .open-question .input-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.container .questions .open-question input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+  height: 40px;
+  padding: 5px 10px;
+}
+.container .score-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+.container .score-wrapper .your-score {
+  font-size: 18px;
+}
+.container .questions .end-button-wrapper {
+  max-width: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
