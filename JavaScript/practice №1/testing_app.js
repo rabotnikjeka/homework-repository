@@ -3,10 +3,10 @@ const startTest = document.querySelector(".container .start-page .start-test");
 const firstQuestion = document.querySelector(".container .questions .question-1");
 
 const QuestionRequiredRadio = document.querySelectorAll(
-  ".container .questions #question input[type='radio']"
+  ".container .questions .question input[type='radio']"
 );
 const QuestionRequiredText = document.querySelectorAll(
-  ".container .questions #question input[type='text']"
+  ".container .questions .question input[type='text']"
 );
 
 const nextButton = document.querySelector(".container .next-button");
@@ -15,7 +15,7 @@ const confirmButton = document.querySelector(".container .confirm-button");
 
 const endButton = document.querySelector(".container .questions .submit-button");
 
-const questions = document.querySelectorAll(".container .questions #question");
+const questions = document.querySelectorAll(".container .questions .question");
 
 let allQuestions = 10;
 let ratio;
