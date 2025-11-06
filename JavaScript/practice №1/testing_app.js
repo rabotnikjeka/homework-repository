@@ -104,11 +104,14 @@ let yourScore = 0;
 startTest.addEventListener("click", () => {
   showQuestion(questionsArr[questionNumber]);
   startTest.classList.remove("active");
+  startTest.disabled = true;
 });
 
 confirmButton.addEventListener("click", () => {
   confirmButton.classList.remove("active");
+  confirmButton.disabled = true;
   nextButton.classList.add("active");
+  nextButton.disabled = false;
   checkCorrectAnswer();
   questionRequiredRadio.forEach((disabledRadio) => {
     disabledRadio.disabled = true;
@@ -125,6 +128,7 @@ function showQuestion(arrayOfQuestions) {
     questionRequiredRadio.forEach((displayButtonRadio) => {
       displayButtonRadio.addEventListener("click", () => {
         confirmButton.classList.add("active");
+        confirmButton.disabled = false;
       });
     });
   }
@@ -136,6 +140,7 @@ function showQuestion(arrayOfQuestions) {
     questionRequiredText.forEach((displayButtonText) => {
       displayButtonText.addEventListener("change", () => {
         confirmButton.classList.add("active");
+        confirmButton.disabled = false;
       });
     });
   }
@@ -242,9 +247,12 @@ function checkCorrectAnswer() {
 
 nextButton.addEventListener("click", () => {
   nextButton.classList.remove("active");
-  questionRequiredRadio.forEach((disabledRadio) => {
-    disabledRadio.disabled = false;
-  });
+  nextButton.disabled = true;
+  if (questionRequiredRadio) {
+    questionRequiredRadio.forEach((disabledRadio) => {
+      disabledRadio.disabled = false;
+    });
+  }
   questionNumber++;
   if (questionNumber < questionsArr.length) {
     showQuestion(questionsArr[questionNumber]);
@@ -252,11 +260,13 @@ nextButton.addEventListener("click", () => {
     const containerRadio = document.querySelector(".questions");
     containerRadio.innerHTML = "";
     endButton.classList.add("active");
+    endButton.disabled = false;
 
     const yourScoreText = document.querySelector(".container .your-score");
     if (yourScoreText) {
       yourScoreText.classList.add("active");
-      ratio = (yourScore / allQuestions) * 100;
+
+      let ratio = (yourScore / allQuestions) * 100;
       yourScoreText.textContent =
         "Ваш результат: " + yourScore + " из " + allQuestions + " (" + ratio + "%)";
     }
