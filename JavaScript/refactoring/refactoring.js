@@ -50,8 +50,8 @@
 // 1 задание
 
 const products = [
-  { name: "product1", price: 10 },
-  { name: "product2", price: 20 },
+  { name: "Product 1", price: 10 },
+  { name: "Product 2", price: 20 },
 ];
 
 function calcTotal(price) {
@@ -65,11 +65,23 @@ for (let product of products) {
 
 // 2 задание
 
+const user = { isAdmin: true, isActive: true, age: 25 };
+
 if (user.isAdmin && user.isActive && user.age > 18) {
   console.log("Access granted");
+} else {
+  console.log("Access denied");
 }
 
 // 3 задание
+
+const order = {
+  id: 1,
+  items: [
+    { name: "Apple", price: 50, quantity: 3 },
+    { name: "Banana", price: 35, quantity: 4 },
+  ],
+};
 
 function checkStock(item) {
   return Math.random() < 0.5;
@@ -110,3 +122,5 @@ function processOrder(order) {
 
   console.log("Order processed with total:", totalSum);
 }
+
+processOrder(order);
