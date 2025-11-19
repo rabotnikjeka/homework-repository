@@ -8,9 +8,7 @@ const student = {
   },
 
   delayedGreet: function () {
-    setTimeout(() => {
-      console.log(`Hello, ${this.name}!`);
-    }, 1000);
+    setTimeout(() => this.greet(), 1000);
   },
 };
 
