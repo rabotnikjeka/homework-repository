@@ -2,26 +2,22 @@
 
 const arrNumbers = [1, 2, 32, 4, 5, 27];
 
-function sum(arr, index) {
+const sum = (arr, index) => {
   const length = arr.length;
 
   if (index === length) return 0;
   return arr[index] + sum(arr, index + 1);
-}
+};
 
 console.log(sum(arrNumbers, 0));
 
 // второе задание
 
-function max(arr, index) {
+const max = (arr, index) => {
   if (index === arr.length - 1) return arr[index];
-
-  if (arr[index] > max(arr, index + 1)) {
-    return arr[index];
-  } else {
-    return max(arr, index + 1);
-  }
-}
+  const recMax = max(arr, index + 1);
+  return arr[index] > recMax ? arr[index] : recMax;
+};
 
 console.log(max(arrNumbers, 0));
 
@@ -45,3 +41,26 @@ function FibonacciCalculator() {
 
 const fibonacciResult = FibonacciCalculator();
 console.log(fibonacciResult(500));
+
+// третье задание
+
+function deepCopy(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  } // проверка объекта перед копированием, чтоб не копировать примитивы и null тк type of null === object
+  const copy = Array.isArray(obj) ? [] : {}; // условие через тернарный оператор суть которого в создании контейнера с исходным типом массив или объект (в зависимости от того что копируем)
+  for (let key in obj) {
+    // циклом проходим по объекту
+    if (obj.hasOwnProperty(key)) {
+      // проверка на наличие свойств у самого объекта а не наследованные от прототипа
+      copy[key] = deepCopy(obj[key]); // рекурсивный вызов функции для вложенных объектов типа объект/массив и запись в переменную
+    }
+  }
+  return copy; // возвращает готовую копию
+}
+
+const original = { a: 1, b: { c: 2 } };
+const deepCopyObj = deepCopy(original);
+deepCopyObj.b.c = 3;
+
+console.log(original.b.c); // результат 2 тк функция сделала глубокое копирование, изменения копии не отражаются на оригинале
