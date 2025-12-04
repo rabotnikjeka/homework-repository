@@ -1,0 +1,273 @@
+body {
+  background-color: #252422;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-images .village img {
+  display: none;
+}
+
+.bg-images .village img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .village {
+  overflow: hidden;
+}
+
+.bg-images .road img {
+  display: none;
+}
+
+.bg-images .road img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .road {
+  overflow: hidden;
+}
+
+.bg-images .forest img {
+  display: none;
+}
+
+.bg-images .forest img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .forest {
+  overflow: hidden;
+}
+
+.bg-images .deep-forest img {
+  display: none;
+}
+
+.bg-images .deep-forest img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .deep-forest {
+  overflow: hidden;
+}
+
+.bg-images .real-deep-forest img {
+  display: none;
+}
+
+.bg-images .real-deep-forest img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .real-deep-forest {
+  overflow: hidden;
+}
+
+.bg-images .old-mine img {
+  display: none;
+}
+
+.bg-images .old-mine img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .old-mine {
+  overflow: hidden;
+}
+
+.bg-images .pit img {
+  display: none;
+}
+
+.bg-images .pit img.active {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.5;
+  display: block;
+}
+
+.bg-images .pit {
+  overflow: hidden;
+}
+
+.bg-player-backpack .bg-player img {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  transform: translate(-50%);
+  height: 520px;
+  width: 500px;
+}
+.bg-player-backpack .bg-backpack img {
+  position: fixed;
+  top: 10%;
+  right: 0%;
+  transform: translate(-50%);
+  height: 450px;
+  width: 500px;
+  display: none;
+}
+
+.bg-player-backpack .bg-backpack img.active {
+  display: block;
+}
+
+.containerLeft {
+  position: fixed;
+  top: 10%;
+  right: 0%;
+  transform: translate(-50%);
+  padding: 25px;
+  text-align: center;
+  max-width: 450px;
+  height: 400px;
+  width: 100%;
+  display: none;
+}
+
+.containerLeft.active {
+  display: block;
+}
+
+.containerLeft .backpack input {
+  display: none;
+}
+.containerLeft .backpack label {
+  cursor: pointer;
+}
+
+.containerLeft .backpack input:checked + label {
+  border: 2px solid rgb(255, 217, 2);
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.containerLeft .backpack {
+  max-width: 450px;
+  height: 400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 135px 135px 135px;
+  grid-template-rows: 120px 120px 120px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.container {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  transform: translate(-50%);
+  padding: 25px;
+  background-color: white;
+  text-align: center;
+  max-width: 450px;
+  height: 250px;
+  width: 100%;
+  background: none;
+}
+
+.container .contentWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.container .contentWrapper .buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100px;
+  width: 100%;
+}
+
+.container .contentWrapper .buttonWrapper button {
+  display: flex;
+  justify-content: center;
+  max-width: 140px;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  background-color: #252422;
+  border-color: black;
+}
+
+.container .contentWrapper .buttonWrapper .buttonHideInventory {
+  display: none;
+}
+.container .contentWrapper .buttonWrapper .buttonInventory {
+  display: none;
+}
+.container .contentWrapper .buttonWrapper .buttonToResurrection {
+  display: none;
+}
+.container .contentWrapper .buttonWrapper .buttonHideInventory.active {
+  display: block;
+}
+.container .contentWrapper .buttonWrapper .buttonInventory.active {
+  display: block;
+}
+.container .contentWrapper .buttonWrapper .buttonToResurrection.active {
+  display: block;
+}
+.container .contentWrapper .buttonWrapper .buttonToUse {
+  display: none;
+}
+.container .contentWrapper .buttonWrapper .buttonToUse.active {
+  display: block;
+}
+.container .contentWrapper .buttonWrapper .buttonAttack {
+  display: none;
+}
+.container .contentWrapper .buttonWrapper .buttonAttack.active {
+  display: block;
+}
+.container .playerParametersWrapper {
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 25%;
+  left: 10%;
+  max-width: 250px;
+  width: 100%;
+}
+
+.container .actionLogInfo {
+  position: fixed;
+  top: 110%;
+  left: 2%;
+  padding: 15px;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+  color: white;
+}
