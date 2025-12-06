@@ -106,19 +106,19 @@ const actionLog = [];
 
 const items = {
   healthPotion: "Зелье здоровья",
-  healthPotionUse: (healthPotion) => {
+  healthPotionUse: () => {
     player.healthPoints = player.healthPoints + 20;
   },
   smallHealthPotion: "Малое зелье здоровья",
-  smallHealthPotionUse: (smallHealthPotion) => {
+  smallHealthPotionUse: () => {
     player.healthPoints = player.healthPoints + 10;
   },
   greateAxe: "Большой топор",
-  greateAxeUse: (greateAxe) => {
+  greateAxeUse: () => {
     player.damage = player.damage + 7;
   },
   minerDef: "Шахтерский защитный комплект",
-  minerDefUse: (minerDef) => {
+  minerDefUse: () => {
     player.defence = player.defence + 10;
   },
 };
@@ -206,6 +206,82 @@ const player = {
 bgImageVillageParent.style.height = "100vh";
 bgImageVillageParent.style.width = "100vw";
 
+const changeBackgroundImageOnMove = function () {
+  switch (locations[player.playerLocationIndex].locationName) {
+    case "Деревня":
+      bgImageRoad.classList.remove("active");
+      bgImageVillage.classList.add("active");
+      bgImageRoadParent.style.height = "0vh";
+      bgImageRoadParent.style.width = "0vw";
+      bgImageVillageParent.style.height = "100vh";
+      bgImageVillageParent.style.width = "100vw";
+      break;
+    case "Старая дорога":
+      bgImageVillage.classList.remove("active");
+      bgImageForest.classList.remove("active");
+      bgImageRoad.classList.add("active");
+      bgImageForestParent.style.height = "0vh";
+      bgImageForestParent.style.width = "0vw";
+      bgImageVillageParent.style.height = "0vh";
+      bgImageVillageParent.style.width = "0vw";
+      bgImageRoadParent.style.height = "100vh";
+      bgImageRoadParent.style.width = "100vw";
+      break;
+    case "Лес":
+      bgImageRoad.classList.remove("active");
+      bgImageDeepForest.classList.remove("active");
+      bgImageForest.classList.add("active");
+      bgImageDeepForestParent.style.height = "0vh";
+      bgImageDeepForestParent.style.width = "0vw";
+      bgImageRoadParent.style.height = "0vh";
+      bgImageRoadParent.style.width = "0vw";
+      bgImageForestParent.style.height = "100vh";
+      bgImageForestParent.style.width = "100vw";
+      break;
+    case "Глубины леса":
+      bgImageForest.classList.remove("active");
+      bgImageRealDeepForest.classList.remove("active");
+      bgImageDeepForest.classList.add("active");
+      bgImageRealDeepForestParent.style.height = "0vh";
+      bgImageRealDeepForestParent.style.width = "0vw";
+      bgImageForestParent.style.height = "0vh";
+      bgImageForestParent.style.width = "0vw";
+      bgImageDeepForestParent.style.height = "100vh";
+      bgImageDeepForestParent.style.width = "100vw";
+      break;
+    case "Ваще глубокий лес жесть...":
+      bgImageDeepForest.classList.remove("active");
+      bgImageOldMine.classList.remove("active");
+      bgImageRealDeepForest.classList.add("active");
+      bgImageOldMineParent.style.height = "0vh";
+      bgImageOldMineParent.style.width = "0vw";
+      bgImageDeepForestParent.style.height = "0vh";
+      bgImageDeepForestParent.style.width = "0vw";
+      bgImageRealDeepForestParent.style.height = "100vh";
+      bgImageRealDeepForestParent.style.width = "100vw";
+      break;
+    case "Старая шахта":
+      bgImageRealDeepForest.classList.remove("active");
+      bgImagePit.classList.remove("active");
+      bgImageOldMine.classList.add("active");
+      bgImagePitParent.style.height = "0vh";
+      bgImagePitParent.style.width = "0vw";
+      bgImageRealDeepForestParent.style.height = "0vh";
+      bgImageRealDeepForestParent.style.width = "0vw";
+      bgImageOldMineParent.style.height = "100vh";
+      bgImageOldMineParent.style.width = "100vw";
+      break;
+    case "Яма":
+      bgImageOldMine.classList.remove("active");
+      bgImagePit.classList.add("active");
+      bgImageOldMineParent.style.height = "0vh";
+      bgImageOldMineParent.style.width = "0vw";
+      bgImagePitParent.style.height = "100vh";
+      bgImagePitParent.style.width = "100vw";
+      break;
+  }
+};
+
 const moveForward = function () {
   if (locations[player.playerLocationIndex + 1] !== undefined) {
     player.playerLocationIndex = player.playerLocationIndex + 1;
@@ -227,57 +303,6 @@ const moveForward = function () {
     buttonAttack.classList.add("active");
   } else {
     buttonAttack.classList.remove("active");
-  }
-
-  switch (locations[player.playerLocationIndex].locationName) {
-    case "Старая дорога":
-      bgImageVillage.classList.remove("active");
-      bgImageRoad.classList.add("active");
-      bgImageVillageParent.style.height = "0vh";
-      bgImageVillageParent.style.width = "0vw";
-      bgImageRoadParent.style.height = "100vh";
-      bgImageRoadParent.style.width = "100vw";
-      break;
-    case "Лес":
-      bgImageRoad.classList.remove("active");
-      bgImageForest.classList.add("active");
-      bgImageRoadParent.style.height = "0vh";
-      bgImageRoadParent.style.width = "0vw";
-      bgImageForestParent.style.height = "100vh";
-      bgImageForestParent.style.width = "100vw";
-      break;
-    case "Глубины леса":
-      bgImageForest.classList.remove("active");
-      bgImageDeepForest.classList.add("active");
-      bgImageForestParent.style.height = "0vh";
-      bgImageForestParent.style.width = "0vw";
-      bgImageDeepForestParent.style.height = "100vh";
-      bgImageDeepForestParent.style.width = "100vw";
-      break;
-    case "Ваще глубокий лес жесть...":
-      bgImageDeepForest.classList.remove("active");
-      bgImageRealDeepForest.classList.add("active");
-      bgImageDeepForestParent.style.height = "0vh";
-      bgImageDeepForestParent.style.width = "0vw";
-      bgImageRealDeepForestParent.style.height = "100vh";
-      bgImageRealDeepForestParent.style.width = "100vw";
-      break;
-    case "Старая шахта":
-      bgImageRealDeepForest.classList.remove("active");
-      bgImageOldMine.classList.add("active");
-      bgImageRealDeepForestParent.style.height = "0vh";
-      bgImageRealDeepForestParent.style.width = "0vw";
-      bgImageOldMineParent.style.height = "100vh";
-      bgImageOldMineParent.style.width = "100vw";
-      break;
-    case "Яма":
-      bgImageOldMine.classList.remove("active");
-      bgImagePit.classList.add("active");
-      bgImageOldMineParent.style.height = "0vh";
-      bgImageOldMineParent.style.width = "0vw";
-      bgImagePitParent.style.height = "100vh";
-      bgImagePitParent.style.width = "100vw";
-      break;
   }
 };
 
@@ -303,61 +328,6 @@ const moveBack = function () {
     buttonAttack.classList.add("active");
   } else {
     buttonAttack.classList.remove("active");
-  }
-
-  switch (locations[player.playerLocationIndex].locationName) {
-    case "Деревня":
-      bgImageRoad.classList.remove("active");
-      bgImageVillage.classList.add("active");
-      bgImageRoadParent.style.height = "0vh";
-      bgImageRoadParent.style.width = "0vw";
-      bgImageVillageParent.style.height = "100vh";
-      bgImageVillageParent.style.width = "100vw";
-      break;
-    case "Старая дорога":
-      bgImageForest.classList.remove("active");
-      bgImageRoad.classList.add("active");
-      bgImageForestParent.style.height = "0vh";
-      bgImageForestParent.style.width = "0vw";
-      bgImageRoadParent.style.height = "100vh";
-      bgImageRoadParent.style.width = "100vw";
-      break;
-    case "Лес":
-      bgImageDeepForest.classList.remove("active");
-      bgImageForest.classList.add("active");
-      bgImageDeepForestParent.style.height = "0vh";
-      bgImageDeepForestParent.style.width = "0vw";
-      bgImageForestParent.style.height = "100vh";
-      bgImageForestParent.style.width = "100vw";
-      break;
-    case "Глубины леса":
-      bgImageRealDeepForest.classList.remove("active");
-      bgImageDeepForest.classList.add("active");
-      bgImageRealDeepForestParent.style.height = "0vh";
-      bgImageRealDeepForestParent.style.width = "0vw";
-      bgImageDeepForestParent.style.height = "100vh";
-      bgImageDeepForestParent.style.width = "100vw";
-      break;
-    case "Ваще глубокий лес жесть...":
-      bgImageOldMine.classList.remove("active");
-      bgImageRealDeepForest.classList.add("active");
-      bgImageOldMineParent.style.height = "0vh";
-      bgImageOldMineParent.style.width = "0vw";
-      bgImageRealDeepForestParent.style.height = "100vh";
-      bgImageRealDeepForestParent.style.width = "100vw";
-      break;
-    case "Старая шахта":
-      bgImagePit.classList.remove("active");
-      bgImageOldMine.classList.add("active");
-      bgImagePitParent.style.height = "0vh";
-      bgImagePitParent.style.width = "0vw";
-      bgImageOldMineParent.style.height = "100vh";
-      bgImageOldMineParent.style.width = "100vw";
-      break;
-    case "Яма":
-      bgImageOldMine.classList.remove("active");
-      bgImagePit.classList.add("active");
-      break;
   }
 };
 
@@ -479,17 +449,17 @@ const updatePlayerParameters = function () {
 const use = function () {
   const selectedInput = document.querySelector("input[type='radio']:checked");
 
-  let userAnswer;
+  let selectedInputValue;
 
   if (selectedInput) {
-    userAnswer = selectedInput.value;
+    selectedInputValue = selectedInput.value;
   }
-  let indexOFToUse;
-  switch (userAnswer) {
+  let indexOfSelectedInputValue;
+  switch (selectedInputValue) {
     case "Зелье здоровья":
       items.healthPotionUse();
-      indexOFToUse = player.inventory.indexOf(selectedInput.value);
-      player.inventory.splice(indexOFToUse, 1);
+      indexOfSelectedInputValue = player.inventory.indexOf(selectedInput.value);
+      player.inventory.splice(indexOfSelectedInputValue, 1);
       actionLog.push(
         `Вы чувствуете себя горазда лучше. Ваше здоровье: ${player.healthPoints}`
       );
@@ -497,8 +467,8 @@ const use = function () {
       break;
     case "Малое зелье здоровья":
       items.smallHealthPotionUse();
-      indexOFToUse = player.inventory.indexOf(selectedInput.value);
-      player.inventory.splice(indexOFToUse, 1);
+      indexOfSelectedInputValue = player.inventory.indexOf(selectedInput.value);
+      player.inventory.splice(indexOfSelectedInputValue, 1);
       actionLog.push(
         `Вы чувствуете себя чуть лучше. Ваше здоровье: ${player.healthPoints}`
       );
@@ -506,15 +476,15 @@ const use = function () {
       break;
     case "Большой топор":
       items.greateAxeUse();
-      indexOFToUse = player.inventory.indexOf(selectedInput.value);
-      player.inventory.splice(indexOFToUse, 1);
+      indexOfSelectedInputValue = player.inventory.indexOf(selectedInput.value);
+      player.inventory.splice(indexOfSelectedInputValue, 1);
       actionLog.push(`В этом оружии ощущается сила. Ваш урон увеличен на 7`);
       backpack.innerHTML = "";
       break;
     case "Шахтерский защитный комплект":
       items.minerDefUse();
-      indexOFToUse = player.inventory.indexOf(selectedInput.value);
-      player.inventory.splice(indexOFToUse, 1);
+      indexOfSelectedInputValue = player.inventory.indexOf(selectedInput.value);
+      player.inventory.splice(indexOfSelectedInputValue, 1);
       actionLog.push(
         `Похоже этот орк нашел экипировку шахтеров. В ней я чувствую себя в безопасности! Ваша защита увеличина на 10`
       );
@@ -535,6 +505,7 @@ buttonMoveForward.addEventListener("click", () => {
   hideInventory();
   updatePlayerParameters();
   actionLogContent();
+  changeBackgroundImageOnMove();
   buttonToUse.classList.remove("active");
   buttonHideInventory.classList.remove("active");
   buttonInventory.classList.add("active");
@@ -545,6 +516,7 @@ buttonMoveBack.addEventListener("click", () => {
   hideInventory();
   updatePlayerParameters();
   actionLogContent();
+  changeBackgroundImageOnMove();
   buttonToUse.classList.remove("active");
   buttonHideInventory.classList.remove("active");
   buttonInventory.classList.add("active");
