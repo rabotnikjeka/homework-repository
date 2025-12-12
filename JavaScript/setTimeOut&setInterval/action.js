@@ -1,10 +1,12 @@
 //первое задание
+
 let setTime = 10;
+let time;
 
 function countDown() {
   setTime--;
   console.log(setTime);
-  const time = setTimeout(countDown, 1000);
+  time = setTimeout(countDown, 1000);
   if (setTime <= 0) {
     console.log("Таймер завершен");
     clearTimeout(time);
