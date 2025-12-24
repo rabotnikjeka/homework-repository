@@ -34,7 +34,8 @@ container.appendChild(showUserEmail);
 
 const userInfo = {};
 
-saveInfoButton.addEventListener("click", () => {
+saveInfoButton.addEventListener("click", (event) => {
+  event.preventDefault();
   userInfo.userName = inputFieldName.value;
   userInfo.userPhoneNumber = inputFieldPhoneNumber.value;
   userInfo.userEmail = inputFieldEmail.value;
@@ -44,9 +45,13 @@ saveInfoButton.addEventListener("click", () => {
 
 showData.addEventListener("click", () => {
   const getData = JSON.parse(localStorage.getItem("userInfo"));
-  showUserName.textContent = getData.userName;
-  showUserPhoneNumber.textContent = getData.userPhoneNumber;
-  showUserEmail.textContent = getData.userEmail;
+  if (!getData === null) {
+    showUserName.textContent = getData.userName;
+    showUserPhoneNumber.textContent = getData.userPhoneNumber;
+    showUserEmail.textContent = getData.userEmail;
+  } else {
+    console.log("введите данные");
+  }
 });
 
 //Второе задение
@@ -85,15 +90,8 @@ paymentForm.appendChild(deleteButton);
 const paymentsShow = document.createElement("div");
 container.appendChild(paymentsShow);
 
-const checkPaymentInfo = JSON.parse(localStorage.getItem("paymentInfo"));
+let payments = JSON.parse(localStorage.getItem("paymentInfo")) || [];
 
-let payments = [];
-
-if (checkPaymentInfo) {
-  payments = checkPaymentInfo;
-} else {
-  payments = [];
-}
 let idCount = 0;
 saveInfoButtonPayment.addEventListener("click", (event) => {
   event.preventDefault();
