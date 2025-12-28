@@ -2,7 +2,6 @@
 
 const urlPosts = "https://jsonplaceholder.typicode.com/posts";
 
-const newPost = {};
 const container = document.querySelector(".container");
 const form = document.querySelector(".form");
 const inputUserId = document.querySelector(".input-userId input");
@@ -14,6 +13,7 @@ container.appendChild(responseShow);
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
+  const newPost = {};
   newPost.userId = inputUserId.value;
   newPost.title = inputTitle.value;
   newPost.body = inputBody.value;
@@ -57,12 +57,12 @@ const renderPostsFunction = function (info) {
 };
 
 showAllPosts.addEventListener("click", () => {
-  renderPosts.innerHTML = "";
   fetch(urlPosts)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       allPosts = data;
+      renderPosts.innerHTML = "";
       renderPostsFunction(allPosts);
     });
 });
@@ -77,8 +77,22 @@ deletePost.textContent = "delete";
 container.appendChild(deletePost);
 
 deletePost.addEventListener("click", (event) => {
-  const idToDelete = Number(deletePostInput.value);
   event.preventDefault();
+  const idToDelete = Number(deletePostInput.value);
+
+  let isExists = false;
+  for (let i = 0; i < allPosts.length; i++) {
+    if (allPosts[i].id === idToDelete) {
+      isExists = true;
+      break;
+    }
+  }
+
+  if (!isExists) {
+    alert(`Ошибка: Пост с ID ${idToDelete} не найден в списке.`);
+    return;
+  }
+
   fetch(`https://jsonplaceholder.typicode.com/posts/${idToDelete}`, {
     method: "DELETE",
   }).then((response) => {
@@ -103,15 +117,7 @@ container.appendChild(renderUserProfiles);
 
 let userProfiles = [];
 
-const userUpdate = {
-  address: {
-    geo: {},
-  },
-  company: {},
-};
-
 const renderUserProfile = function (info) {
-  renderUserProfiles.innerHTML = "";
   for (let i = 0; i < info.length; i++) {
     const userId = document.createElement("div");
     renderUserProfiles.appendChild(userId);
@@ -175,6 +181,7 @@ showUserButton.addEventListener("click", (event) => {
     .then((response) => response.json())
     .then((data) => {
       userProfiles = data;
+      renderUserProfiles.innerHTML = "";
       renderUserProfile(userProfiles);
     });
 });
@@ -199,6 +206,12 @@ const updateButton = document.querySelector(".submit-update-button button");
 
 updateButton.addEventListener("click", (event) => {
   event.preventDefault();
+  const userUpdate = {
+    address: {
+      geo: {},
+    },
+    company: {},
+  };
   userUpdate.id = inputUpdateUserId.value;
   userUpdate.name = inputName.value;
   userUpdate.username = inputUserName.value;
