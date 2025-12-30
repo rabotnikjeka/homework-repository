@@ -40,8 +40,6 @@ firstTask();
 
 // второе задание
 const secondTask = function () {
-  "use strict";
-
   const user = {
     name: "Иван",
     age: 25,
