@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do list</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-head">To-Do List</div>
+      <div class="add-new-task">
+        <div class="add-new-task-input-wrapper">
+          <input type="text" placeholder="Введите новую задачу" />
+        </div>
+        <button class="add-new-task-button">Добавить задачу</button>
+      </div>
+      <div class="tasks-wrapper"></div>
+      <div class="bottom-button-wrapper">
+        <button class="all-tasks">Все задачи</button>
+        <button class="complited-tasks">Выполненные задачи</button>
+        <button class="uncoplited-tasks">Невыполненные задачи</button>
+      </div>
+    </div>
+    <script src="./action.js"></script>
+  </body>
+</html>
