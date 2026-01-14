@@ -1,6 +1,6 @@
 //Первое задание
 class Counter {
-  #count = 0;
+  #count;
   constructor(count) {
     this.#count = count;
   }
@@ -26,11 +26,17 @@ class EmailValidator {
   static isValid(email) {
     const isContains = email.includes("@");
     if (!isContains) {
-      console.log("Невалидный email");
+      return isContains;
     } else {
-      console.log("email валиден");
+      return isContains;
     }
   }
+}
+
+if (EmailValidator.isValid) {
+  console.log("email валиден");
+} else {
+  console.log("Невалидный email");
 }
 
 EmailValidator.isValid("123@123.com");
