@@ -10,10 +10,10 @@ const allTasksButtonFilter = document.querySelector(
   ".container .bottom-button-wrapper .all-tasks"
 );
 const completedTasksButtonFilter = document.querySelector(
-  ".container .bottom-button-wrapper .complited-tasks"
+  ".container .bottom-button-wrapper .completed-tasks"
 );
 const uncompletedTasksButtonFilter = document.querySelector(
-  ".container .bottom-button-wrapper .uncoplited-tasks"
+  ".container .bottom-button-wrapper .uncompleted-tasks"
 );
 
 const todoPosts = "https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5";
@@ -21,7 +21,7 @@ let todosData;
 const selectedFilter = {
   all: true,
   completed: false,
-  uncomplited: false,
+  uncompleted: false,
 };
 const tasks = [];
 
@@ -67,7 +67,7 @@ const renderDataInfoAll = function (dataToRender) {
       return alarmButton;
     };
     if (
-      (selectedFilter.all || selectedFilter.uncomplited === true) &&
+      (selectedFilter.all || selectedFilter.uncompleted === true) &&
       !element.completed
     ) {
       dataToDoRightWrapper.appendChild(createAlarmButton());
@@ -85,7 +85,7 @@ const renderDataInfoAll = function (dataToRender) {
       if (task.completed) {
         alarmButton.remove();
       } else {
-        dataInfo.appendChild(createAlarmButton());
+        dataToDoRightWrapper.appendChild(createAlarmButton());
       }
       localStorage.setItem("todosData", JSON.stringify(dataToRender));
     });
@@ -156,45 +156,49 @@ addNewTaskButton.addEventListener("click", () => {
     newUserId = todosData[i].userId;
     newId = todosData[i].id + 1;
   }
-  const newTaskInfo = {
-    userId: newUserId,
-    id: newId,
-    title: addNewTask.value,
-    completed: false,
-  };
-  todosData.push(newTaskInfo);
+  if (addNewTask.value === "") {
+    alert("Введите название задачи");
+  } else {
+    const newTaskInfo = {
+      userId: newUserId,
+      id: newId,
+      title: addNewTask.value,
+      completed: false,
+    };
+    todosData.push(newTaskInfo);
 
-  console.log(todosData);
-  localStorage.setItem("todosData", JSON.stringify(todosData));
-  tasksWrapper.innerHTML = "";
-  renderDataInfoAll(todosData);
-  addNewTask.value = "";
+    console.log(todosData);
+    localStorage.setItem("todosData", JSON.stringify(todosData));
+    tasksWrapper.innerHTML = "";
+    renderDataInfoAll(todosData);
+    addNewTask.value = "";
+  }
 });
 
 completedTasksButtonFilter.addEventListener("click", () => {
   tasksWrapper.innerHTML = "";
 
   const completedTasksFilter = todosData.filter((obj) => {
-    if (obj.completed === true) {
+    if (obj.completed) {
       return true;
     }
   });
   selectedFilter.all = false;
   selectedFilter.completed = true;
-  selectedFilter.uncomplited = false;
+  selectedFilter.uncompleted = false;
   renderDataInfoAll(completedTasksFilter);
 });
 
 uncompletedTasksButtonFilter.addEventListener("click", () => {
   tasksWrapper.innerHTML = "";
   const unCompletedTasksFilter = todosData.filter((obj) => {
-    if (obj.completed === false) {
+    if (!obj.completed) {
       return true;
     }
   });
   selectedFilter.all = false;
   selectedFilter.completed = false;
-  selectedFilter.uncomplited = true;
+  selectedFilter.uncompleted = true;
   renderDataInfoAll(unCompletedTasksFilter);
 });
 
@@ -202,6 +206,6 @@ allTasksButtonFilter.addEventListener("click", () => {
   tasksWrapper.innerHTML = "";
   selectedFilter.all = true;
   selectedFilter.completed = false;
-  selectedFilter.uncomplited = false;
+  selectedFilter.uncompleted = false;
   renderDataInfoAll(todosData);
 });
