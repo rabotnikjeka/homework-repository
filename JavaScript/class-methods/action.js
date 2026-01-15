@@ -25,21 +25,19 @@ counterTest.showCount();
 class EmailValidator {
   static isValid(email) {
     const isContains = email.includes("@");
-    if (!isContains) {
-      return isContains;
-    } else {
+    if (isContains) {
       return isContains;
     }
   }
 }
 
-if (EmailValidator.isValid) {
+const userEmail = "123@123.com";
+
+if (EmailValidator.isValid(userEmail)) {
   console.log("email валиден");
 } else {
   console.log("Невалидный email");
 }
-
-EmailValidator.isValid("123@123.com");
 
 //Третье задание
 
