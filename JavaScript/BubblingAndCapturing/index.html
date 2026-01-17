@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,19 @@
     <title>BubblingAndCapturing</title>
   </head>
   <body>
+    <div id="outer" style="padding: 20px; background: lightcoral">
+      Outer
+      <div id="middle" style="padding: 20px; background: orange">
+        Middle
+        <div id="inner" style="padding: 20px; background: yellow">Inner (Нажми сюда)</div>
+      </div>
+    </div>
+    <form id="registrationForm">
+      <input type="text" name="username" placeholder="Username" />
+      <input type="text" name="email" placeholder="Email" />
+      <button type="submit">Отправить</button>
+      <p id="error" style="color: red"></p>
+    </form>
     <script src="./action.js"></script>
   </body>
 </html>
