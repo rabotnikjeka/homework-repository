@@ -1,0 +1,584 @@
+body {
+  padding: 0 20px 0 20px;
+}
+.shopFill {
+  display: flex;
+  gap: 50px;
+  margin-top: 200px;
+}
+.shopFill .leftSide {
+  max-width: 244px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.shopFill .leftSide .searchArea .searchRow {
+  padding: 0 25px 15px 0;
+}
+.shopFill .leftSide .searchArea {
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+
+.shopFill .leftSide .searchArea .leftSideSearchIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shopFill .leftSide .asideParameters {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.shopFill .leftSide .asideParameters .parametersTitle {
+  border-bottom: 2px solid black;
+  padding-bottom: 14px;
+  font-family: Josefin Sans;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .categories {
+  margin-left: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  max-height: 188px;
+  height: 100%;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .categories .category {
+  height: 27px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .categories .category::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-image: url("../icons/squareListIcon.svg");
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .categories
+  .category.active::before {
+  content: "";
+  display: block;
+  background-image: url("../icons/lineActiveCategory.svg");
+  width: 25px;
+  height: 3px;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .categories .category.active,
+.shopFill .leftSide .asideParameters .parametersComponents .categories .category:hover {
+  color: #ff8e8e;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .categories
+  .category:hover:not(.active)::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-image: url("../icons/squareListIconHover.svg");
+}
+.shopFill .leftSide .asideParameters .parametersComponents .priceBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .priceBar .input {
+  width: 100%;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .colors .color {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopFill .leftSide .asideParameters .parametersComponents .colors .color .colorCheckbox {
+  appearance: none;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #eeeeee;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .colors
+  .color
+  .colorCheckbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  background-image: url("../icons/checkPink.svg");
+  background-repeat: no-repeat;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .colors
+  .color
+  .colorCheckbox:checked::after {
+  width: 15px;
+  height: 15px;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .colors
+  .color
+  .colorCheckbox:checked
+  + .colorCheckboxLabel {
+  color: #ff8e8e;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .colors {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 20px;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .colors
+  .color
+  .colorCheckboxLabel {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .colors .color {
+  display: flex;
+  gap: 15px;
+}
+.shopFill .leftSide .asideParameters .colorsBottomSide .deployColors {
+  display: flex;
+  gap: 15px;
+  margin-top: 23px;
+  color: #ff8e8e;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.shopFill .leftSide .asideParameters .colorsBottomSide .buttonLineWraper {
+  margin-top: 40px;
+}
+
+.shopFill .leftSide .asideParameters .parametersComponents .ReviewedByYou {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.shopFill .leftSide .asideParameters .parametersComponents .ReviewedByYou .recomedation {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationPhoto {
+  background-color: #f1f2f3;
+  height: 85px;
+  max-width: 75px;
+  width: 100%;
+}
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationName {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.shopFill
+  .leftSide
+  .asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationInfo
+  .recomendationPrice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationInfo
+  .recomendationPrice
+  .recomendation.current-price {
+  font-weight: 400;
+  font-size: 14px;
+}
+.asideParameters
+  .parametersComponents
+  .ReviewedByYou
+  .recomedation
+  .recomendationInfo
+  .recomendationPrice
+  .recomendation.old-price {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.shopFill .rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+}
+.shopFill .rightSide .catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 846px;
+  width: 100%;
+}
+.shopFill .rightSide .countSort {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.shopFill .rightSide .countSort .sort {
+  max-width: 262px;
+  width: 100%;
+}
+.shopFill .rightSide .countSort .sort .input {
+  color: rgba(0, 0, 0, 1);
+}
+.shopFill .rightSide .countSort .count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+}
+.shopFill .rightSide .countSort .count .bold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 170%;
+}
+.shopFill .rightSide .sort {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.shopFill .rightSide .catalog .catalogElements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 30px;
+  max-height: 1910px;
+  height: 100%;
+}
+.shopFill .rightSide .catalog .catalogElements .catalogElement {
+  max-width: 262px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shopFill .rightSide .catalog .catalogElements .catalogElement .photoElement {
+  background-color: #f1f2f3;
+  height: 360px;
+  position: relative;
+}
+.shopFill .rightSide .catalog .catalogElements .catalogElement .infoElement {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shopFill .rightSide .catalog .catalogElements .catalogElement .infoElement .nameElement {
+  color: #444444;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+}
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .infoElement
+  .priceElement {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .infoElement
+  .priceElement
+  .button {
+  padding: 4px 48px;
+}
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .infoElement
+  .priceElement
+  .buttonLine {
+  height: 24px;
+}
+
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .photoElement
+  .topSideElement {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 222px;
+}
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .photoElement
+  .topSideElement
+  .favorites {
+  cursor: pointer;
+}
+
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .photoElement
+  .topSideElement
+  .labels {
+  display: flex;
+  gap: 10px;
+}
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .photoElement
+  .topSideElement
+  .labels
+  .label {
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  padding: 5px 10px;
+  background: rgba(255, 142, 142, 1);
+}
+.shopFill
+  .rightSide
+  .catalog
+  .catalogElements
+  .catalogElement
+  .photoElement
+  .topSideElement
+  .labels
+  .label.new {
+  background: rgba(149, 204, 181, 1);
+}
+.shopFill .rightSide .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.shopFill .rightSide .pagination .pages {
+  display: flex;
+  gap: 20px;
+}
+
+.shopFill .rightSide .pagination .pages .page {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 20%);
+  width: 10px;
+  text-align: center;
+  display: inline-block;
+}
+.shopFill .rightSide .pagination .page::after {
+  content: "";
+  height: 3px;
+  background: rgba(0, 0, 0, 20%);
+  border-radius: 10px;
+  display: block;
+  margin-top: 4px;
+}
+.shopFill .rightSide .pagination .pages .page.active {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  width: 22px;
+  text-align: center;
+}
+.shopFill .rightSide .pagination .pages .page.active::after {
+  content: "";
+  height: 3px;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  display: block;
+  margin-top: 4px;
+}
+.newsletter-wrapper {
+  margin: 200px auto 120px auto;
+  max-width: 1680px;
+  height: 450px;
+  background-color: #f1f2f3;
+}
+.newsletter-wrapper .newsletter {
+  position: relative;
+  background-color: white;
+  max-width: 624px;
+  width: 100%;
+  height: 288px;
+  top: 0;
+  left: 275px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 60px;
+}
+.newsletter-wrapper .newsletter .dotsIcon5 {
+  position: absolute;
+  right: 30px;
+  top: -33px;
+}
+.newsletter-wrapper .newsletter .newsletter-title {
+  font-family: Josefin Sans;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+.newsletter-wrapper .newsletter .newsletter-description {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  color: #444444;
+}
+.newsletter-wrapper .newsletter .email-input-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.newsletter-wrapper .newsletter .email-input-button .email-area {
+  max-width: 360px;
+  width: 100%;
+}
+.newsletter-wrapper .newsletter .email-input-button .email-row.input {
+  border: none;
+  border-bottom: 1px solid rgba(68, 68, 68, 20%);
+  color: rgba(68, 68, 68, 50%);
+  outline: none;
+  max-width: 334px;
+  width: 100%;
+  padding: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.newsletter-wrapper .newsletter .email-input-button .buttonLineWraper {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+.newsletter-wrapper .newsletter .email-input-button .buttonLineWraper .button {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  align-items: center;
+  color: white;
+  padding: 17px 74px;
+  border: none;
+  background-color: rgb(0, 0, 0, 1);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  max-width: 140px;
+  width: 100%;
+}
+.newsletter-wrapper .newsletter .email-input-button .buttonLineWraper .buttonLine {
+  border-right: 2px solid black;
+  height: 50px;
+}
+@media screen and (max-width: 1200px) {
+  .catalogElement {
+    flex-basis: 200px;
+    flex: 1;
+  }
+  .newsletter-wrapper {
+    display: none;
+  }
+}

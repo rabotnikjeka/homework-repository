@@ -1,0 +1,89 @@
+body {
+  height: 1400px;
+}
+html {
+  position: relative;
+  height: 1500px;
+}
+.absoluteTopLeft {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+.absoluteTopRight {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  color: white;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+.absoluteBottomLeft {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  color: white;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+.absoluteBottomRight {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: magenta;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+.fixedBottomCenter {
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.stickyTop {
+  position: sticky;
+  height: 100px;
+  width: 250px;
+  background-color: azure;
+  color: black;
+  top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 5px 5px 15px;
+  margin: 0 auto;
+}

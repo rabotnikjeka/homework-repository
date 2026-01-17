@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/commons.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/cart.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-upper">
+        <div class="headerLeftSide">
+          <div class="burgerLogo">
+            <div class="burgerMenu">
+              <input type="checkbox" id="burger-checkbox" class="burger-checkbox" />
+              <label class="burger" for="burger-checkbox"></label>
+            </div>
+            <div class="logo">
+              <img src="./icons/logo.svg" alt="" />
+            </div>
+          </div>
+          <div class="headerNavigation">
+            <div class="headerNavigationUnit">
+              <a href="">Home</a>
+            </div>
+            <div class="headerNavigationUnit">
+              <span>Pages</span>
+              <img src="./icons/arrowdown.svg" alt="" class="regularArrow" />
+              <img src="./icons/arrowdownPink.svg" alt="" class="hoverArrow" />
+            </div>
+            <div class="headerNavigationUnit active">
+              <span>Shop</span>
+              <img src="./icons/arrowdown.svg" alt="" class="regularArrow" />
+              <img src="./icons/arrowdownPink.svg" alt="" class="hoverArrow" />
+            </div>
+            <div class="headerNavigationUnit">
+              <a href="">Blog</a>
+            </div>
+            <div class="headerNavigationUnit">
+              <a href="">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="headerRightSide">
+          <div class="headerRightSideIcons">
+            <img src="./icons/search.svg" alt="" />
+          </div>
+          <div class="headerRightSideIcons">
+            <img src="./icons/profile.svg" alt="" />
+          </div>
+          <div class="headerRightSideIcons">
+            <img src="./icons/favorites.svg" alt="" />
+            <div class="count">
+              <span class="span"></span>
+              <span class="text">1</span>
+            </div>
+          </div>
+          <div class="headerRightSideIcons">
+            <img src="./icons/cart.svg" alt="" />
+            <div class="count">
+              <span class="span"></span>
+              <span class="text">1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-down">
+        <div class="location-menu">
+          <div class="location-menu-title">Shop</div>
+          <div class="location-menu-navigation">
+            <a href="" class="navigation-item border">Home</a>
+            <a href="" class="navigation-item active">Shop</a>
+          </div>
+          <div class="border-line"></div>
+          <img src="./icons/dotsIcon12x12.svg" alt="" class="dotsIcon12" />
+        </div>
+        <div class="landing-image"></div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="cart">
+        <div class="order-wraper">
+          <div class="product-list">
+            <div class="product">
+              <div class="photo"></div>
+              <div class="product-info">
+                <div class="title">Fashionee - catton shirt (S)</div>
+                <div class="price-wrapper">
+                  <div class="price-and-quantity">
+                    <div class="old-price">$52.99</div>
+                    <div class="current-price">$35.99</div>
+                    <div class="quantity">
+                      <div class="count-button">-</div>
+                      <div class="count">1</div>
+                      <div class="count-button">+</div>
+                    </div>
+                  </div>
+                  <div class="total-price">$35.99</div>
+                </div>
+                <div class="close">
+                  <img src="./icons/close.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="photo"></div>
+              <div class="product-info">
+                <div class="title">Spray wrap skirt</div>
+                <div class="price-wrapper">
+                  <div class="price-and-quantity">
+                    <!-- <div class="old-price">$52.99</div> -->
+                    <div class="current-price">$110.99</div>
+                    <div class="quantity">
+                      <div class="count-button">-</div>
+                      <div class="count">1</div>
+                      <div class="count-button">+</div>
+                    </div>
+                  </div>
+                  <div class="total-price">$35.99</div>
+                </div>
+                <div class="close">
+                  <img src="./icons/close.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order">
+            <div class="title">your order</div>
+            <div class="order-price-wraper">
+              <div class="price-row">
+                <div class="name">Order price</div>
+                <div class="price">$146.98</div>
+              </div>
+              <div class="price-row">
+                <div class="name">Discount for promo code</div>
+                <div>No</div>
+              </div>
+              <div class="price-row delimiter">
+                <div class="name">
+                  Delivery
+                  <span class="additional">(Aug 02 at 16:00)</span>
+                </div>
+                <div class="price">$16</div>
+              </div>
+              <div class="price-row total">
+                <div class="name">Total</div>
+                <div class="price">$146.98</div>
+              </div>
+            </div>
+            <div class="buttonLineWraper">
+              <button class="button">Checkout</button>
+              <div class="buttonLine"></div>
+            </div>
+          </div>
+        </div>
+        <div class="promo-code-wrapper">
+          <div class="info">
+            <div class="title">You Have A Promo Code?</div>
+            <div class="description">
+              To receive up-to-date promotional codes, subscribe to us on social networks.
+            </div>
+          </div>
+          <div class="promo-code">
+            <input
+              type="text"
+              name="promo-code"
+              class="input"
+              placeholder="Enter promo code"
+            />
+            <div class="buttonLineWraper">
+              <button class="button">
+                <img src="./icons/arrowRight.svg" alt="" />
+              </button>
+              <div class="buttonLine"></div>
+            </div>
+          </div>
+          <div class="findUs">
+            <div class="findUsText">Find us here:</div>
+            <div class="socialLinks">
+              <div class="socialLink">
+                <a href="">FB</a>
+              </div>
+              <div class="line"></div>
+              <div class="socialLink">
+                <a href="">TW</a>
+              </div>
+              <div class="line"></div>
+              <div class="socialLink">
+                <a href="">INS</a>
+              </div>
+              <div class="line"></div>
+              <div class="socialLink">
+                <a href="">PT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <img src="./icons/dotsIcon10x10.svg" alt="" class="dotsIcon10" />
+      <img src="./icons/dotsIcon5x5.svg" alt="" class="dotsIcon5" />
+      <div class="container">
+        <div class="footerInfo">
+          <div class="column1">
+            <div class="aboutUs">
+              <div class="footerLogo">
+                <img src="./icons/logo.svg" alt="" />
+              </div>
+              <span>
+                Cillum eu id enim aliquip aute ullamco anim. Culpa deserunt nostrud
+                excepteur voluptate.
+              </span>
+            </div>
+            <div class="findUs">
+              <div class="findUsText">Find us here:</div>
+              <div class="socialLinks">
+                <div class="socialLink">
+                  <a href="">FB</a>
+                </div>
+                <div class="line"></div>
+                <div class="socialLink">
+                  <a href="">TW</a>
+                </div>
+                <div class="line"></div>
+                <div class="socialLink">
+                  <a href="">INS</a>
+                </div>
+                <div class="line"></div>
+                <div class="socialLink">
+                  <a href="">PT</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column2">
+            <div class="columnTitle">About</div>
+            <ul class="columnLinks">
+              <li><a href="">About us</a></li>
+              <li><a href="">Collections</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="column3">
+            <div class="columnTitle">Useful links</div>
+            <ul class="columnLinks">
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms of use</a></li>
+              <li><a href="">Support</a></li>
+              <li><a href="">Shipping details</a></li>
+              <li><a href="">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="column4">
+            <div class="columnTitle">Newsletter</div>
+            <div class="newsLetterText">
+              Subscribe to be the first to hear about deals, offers and upcoming
+              collections.
+            </div>
+            <div class="emailArea">
+              <form action="">
+                <label>
+                  <input type="text" placeholder="Enter your email" class="input" />
+                  <img src="./icons/sendIcon.svg" alt="" />
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="copyrightText">© All right reserved. Fashionee 2020</div>
+          <div class="paymetMethods">
+            <div class="paymetMethodsText">Payment methods:</div>
+            <div class="paymentMethodsUnits">
+              <div class="paymetMethodsUnit">
+                <img src="./icons/imageVisa.svg" alt="visa" />
+              </div>
+              <div class="paymetMethodsUnit">
+                <img src="./icons/imageMC.svg" alt="master card" />
+              </div>
+              <div class="paymetMethodsUnit">
+                <img src="./icons/imagePayPal.svg" alt="paypal" />
+              </div>
+              <div class="paymetMethodsUnit">
+                <img src="./icons/imagePayoneer.svg" alt="payoneer" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+h1 {
+  color: blue;
+}
+.title {
+  color: green;
+}
+#box {
+  color: orange;
+}
+.text {
+  color: black;
+}
+.text.highlight {
+  color: blue;
+}
+p.text.highlight {
+  color: red;
+}
+p.text {
+  color: green;
+}

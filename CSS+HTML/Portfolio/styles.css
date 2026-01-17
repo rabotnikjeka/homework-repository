@@ -1,0 +1,331 @@
+* {
+  font-family: Manrope, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #140e17;
+  padding: 0 20px 220px 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-transform: lowercase;
+  color: #f5fa93;
+}
+.marginTop64 {
+  margin-top: 64px;
+}
+.area1000 {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.fullDescription {
+  display: flex;
+  gap: 112px;
+  align-items: center;
+}
+.photo img {
+  width: 400px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+}
+.myName {
+  font-weight: 800;
+  font-size: 68px;
+  line-height: 110.00000000000001%;
+  flex-wrap: wrap;
+  max-width: 488px;
+  width: 100%;
+}
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  flex-direction: column;
+  color: #ffffff;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 28px;
+  max-width: 488px;
+  width: 100%;
+}
+.writeAction {
+  margin-top: 42px;
+  background: #f5fa93;
+  max-width: 232px;
+  border-radius: 18px;
+  padding: 18px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.writeAction .writeActionName {
+  text-decoration: none;
+  font-weight: 600;
+  max-width: 172px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 100%;
+  color: #000000;
+  text-align: center;
+}
+.writeActionIconLink {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.socials h3 {
+  margin-top: 80px;
+  margin-left: 24px;
+}
+.socialLinks {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.socialLinkItem {
+  max-width: 232px;
+  max-height: 50px;
+  width: 100%;
+  display: flex;
+  padding: 14px;
+  border: 1px solid #333333;
+  border-radius: 18px;
+  align-items: center;
+  gap: 8px;
+}
+.socialName {
+  max-width: 164px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+.socialIcons {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.medium {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+}
+.bold {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+.bio {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 32px;
+  border: 1px solid #333333;
+  border-radius: 32px;
+}
+.bio p {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.workExpirience {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333333;
+  border-radius: 32px;
+  color: #ffffff;
+  gap: 32px;
+  padding: 24px;
+}
+.jobList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.JobName {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+.period {
+  color: #76757b;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 26px;
+}
+.JobPosition {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+.job .position {
+  margin-top: 8px;
+}
+.companyLink {
+  margin-top: 2px;
+}
+.companyLink a {
+  color: #76757b;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 26px;
+  text-decoration-style: solid;
+}
+.portfolio h3 {
+  margin-left: 24px;
+}
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.portfolioList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.portfolioUnit {
+  display: flex;
+  align-items: center;
+  background: #f5fa93;
+  padding: 32px;
+  border-radius: 32px;
+  gap: 48px;
+}
+.PortfolioDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex-grow: 1;
+}
+.projectName {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 42px;
+  line-height: 54px;
+}
+.projectDescription {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 26px;
+  max-width: 600px;
+}
+.projectLinkRight {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.projectLink {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  max-width: 180px;
+  width: 100%;
+  border: 1px solid #333333;
+  padding: 18px 14px;
+  border-radius: 18px;
+  gap: 8px;
+}
+.projectLink .projectLinkName {
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  color: #000000;
+  max-width: 120px;
+  width: 100%;
+}
+.projectLinkIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .fullDescription {
+    gap: 56px;
+  }
+  .description {
+    max-width: 352px;
+    width: 100%;
+  }
+  .photo img {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .socialLinkItem {
+    max-width: 352px;
+    flex: 1;
+    flex-basis: 230px;
+  }
+  .socialName {
+    max-width: 284px;
+    flex: 1;
+    flex-basis: 200px;
+  }
+  .portfolioUnit {
+    gap: 32px;
+  }
+  .picture {
+    max-width: 260px;
+    flex-basis: 260px;
+  }
+  .picture img {
+    width: 100%;
+  }
+  .PortfolioDescription {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fullDescription {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .portfolioUnit {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .socialLinkItem {
+    flex-basis: 150px;
+  }
+  .medium {
+    display: none;
+  }
+}

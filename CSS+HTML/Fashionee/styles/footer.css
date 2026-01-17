@@ -1,0 +1,141 @@
+.footer {
+  border-top: 20px solid rgba(238, 238, 238, 1);
+  padding-top: 110px;
+  margin: 0 auto;
+  margin-top: 110px;
+  width: 100%;
+  height: 370px;
+  position: relative;
+}
+.footer .dotsIcon5 {
+  position: absolute;
+  left: 30px;
+  top: 50px;
+}
+
+.footer .dotsIcon10 {
+  position: absolute;
+  right: 30px;
+  top: 105px;
+}
+
+.footer .footerInfo {
+  display: flex;
+}
+.footer .footerInfo .columnTitle {
+  font-family: Josefin Sans;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+
+.footer .footerInfo .column1 .aboutUs {
+  display: flex;
+  flex-direction: column;
+  max-width: 331px;
+  gap: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(68, 68, 68, 20%);
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.footer .footerInfo .column2 {
+  margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .footerInfo .columnLinks {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.footer .footerInfo .column2 .columnLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: square;
+}
+.footer .footerInfo .column2 .columnLinks a {
+  text-decoration: none;
+  color: #444444;
+}
+
+.footer .footerInfo .column3 {
+  margin-left: 123px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 119px;
+  width: 100%;
+}
+.footer .footerInfo .column3 .columnLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: square;
+}
+.footer .footerInfo .column3 .columnLinks a {
+  text-decoration: none;
+  color: #444444;
+}
+.footer .footerInfo .column4 {
+  margin-left: 74px;
+  max-width: 360px;
+}
+.footer .footerInfo .column4 .newsLetterText {
+  margin: 16px 0 36px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.footer .footerInfo .column4 .emailArea .input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(68, 68, 68, 20%);
+  padding-bottom: 16px;
+  outline: none;
+  padding-right: 25px;
+}
+.footer .footerInfo .column4 .emailArea {
+  position: relative;
+}
+
+.footer .footerInfo .column4 .emailArea img {
+  position: absolute;
+  right: 0;
+}
+
+.footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(68, 68, 68, 20%);
+  padding-top: 23px;
+  margin-bottom: 23px;
+}
+.footer .copyright .copyrightText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+}
+.footer .copyright .paymetMethods {
+  display: flex;
+  gap: 13px;
+}
+.footer .copyright .paymetMethods .paymetMethodsText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  text-transform: capitalize;
+}
+
+.footer .copyright .paymetMethods .paymentMethodsUnits {
+  display: flex;
+  gap: 8px;
+}

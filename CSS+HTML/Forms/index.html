@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <h1>Вулканский салют Колонизатор!</h1>
+    <p>Заполните форму регистрации</p>
+    <div class="registration">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div>
+          <span>Для ввода допускается только кирилица и латиница</span>
+        </div>
+        <label for="candidateName">Имя:</label>
+        <input
+          type="text"
+          id="candidateName"
+          name="candidateName"
+          placeholder="Введите имя"
+          pattern="[A-Za-zА-Яа-яЁё]+"
+          required
+        />
+        <p></p>
+        <div>
+          <span>Для ввода допускается только кирилица и латиница</span>
+        </div>
+        <label for="candidateSurname">Фамилия:</label>
+        <input
+          type="text"
+          id="candidateSurname"
+          name="candidateSurname"
+          placeholder="Введите фамилию"
+          pattern="[A-Za-zА-Яа-яЁё]+"
+          required
+        />
+        <p></p>
+        <label for="age">Возраст:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="0"
+          placeholder="Введите возраст"
+          required
+        />
+        <p></p>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Введите email"
+          required
+        />
+        <p></p>
+        <div>Выберите тип миссии:</div>
+        <div>
+          <label for="researcher">Исследователь</label>
+          <input
+            type="radio"
+            id="researcher"
+            name="Specialization"
+            value="researcher"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="engineer">Инженер</label>
+          <input
+            type="radio"
+            id="engineer"
+            name="Specialization"
+            value="engineer"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="doctor">Врач</label>
+          <input
+            type="radio"
+            id="doctor"
+            name="Specialization"
+            value="doctor"
+            required
+          />
+        </div>
+        <p></p>
+        <div>Выберите свои навыки:</div>
+        <div>
+          <label for="programming">Программирование</label>
+          <input type="checkbox" id="programming" name="skills" />
+        </div>
+        <div>
+          <label for="medicine">Медицина</label>
+          <input type="checkbox" id="medicine" name="skills" />
+        </div>
+        <div>
+          <label for="construction">Строительство</label>
+          <input type="checkbox" id="construction" name="skills" />
+        </div>
+        <p></p>
+        <div>
+          <label for="aboutme"
+            >Кратко расскажи почему ты хочешь полетель на Марс:</label
+          >
+        </div>
+        <textarea
+          name="aboutme"
+          id="aboutme"
+          rows="10"
+          cols="50"
+          placeholder="Расскажи о себе"
+        ></textarea>
+        <p></p>
+        <label for="photo">Прикрепите свое фото</label>
+        <input
+          type="file"
+          id="photo"
+          name="photo"
+          accept="image/jpeg, image/png"
+          required
+        />
+        <p></p>
+        <label for="accept">Согласен с условиями миссии</label>
+        <input type="checkbox" id="accept" name="accept" required />
+        <p></p>
+        <button type="submit">Отправит заявку!</button>
+      </form>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
