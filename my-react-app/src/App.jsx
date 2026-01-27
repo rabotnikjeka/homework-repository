@@ -1,14 +1,24 @@
 import "./App.css";
-import Props from "./props";
-import ToDoList from "./ToDoList";
 
-function App() {
+function UserCard({ name, age }) {
   return (
-    <div className="App">
-      {/* <ToDoList /> */}
-      <Props />
+    <div className="user-card">
+      <p>Имя: {name}</p>
+      <p>Возраст: {age}</p>
     </div>
   );
 }
 
-export default App;
+function Props() {
+  return (
+    <div className="root">
+      <UserCard name="Alex" age={30} />
+      <hr />
+      <UserCard name="Anna" age={18} />
+      <hr />
+      <UserCard name="Bob" age={5} />
+    </div>
+  );
+}
+
+export default Props;
