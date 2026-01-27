@@ -1,24 +1,11 @@
 import "./App.css";
 
-function UserCard({ name, age }) {
+function App() {
   return (
-    <div className="user-card">
-      <p>Имя: {name}</p>
-      <p>Возраст: {age}</p>
+    <div>
+      <h1>Hello World</h1>
     </div>
   );
 }
 
-function Props() {
-  return (
-    <div className="root">
-      <UserCard name="Alex" age={30} />
-      <hr />
-      <UserCard name="Anna" age={18} />
-      <hr />
-      <UserCard name="Bob" age={5} />
-    </div>
-  );
-}
-
-export default Props;
+export default App;
