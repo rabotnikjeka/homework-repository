@@ -1,15 +1,12 @@
 import "./App.css";
+import Props from "./props";
+import ToDoList from "./ToDoList";
 
 function App() {
-  const listItems = ["помыть посуду", "сделать домашнее задание", "прочитать книгу"];
   return (
-    <div className="root">
-      <h1 className="title">Список дел</h1>
-      <ul>
-        {listItems.map((item, index) => {
-          return <li key={index}>{item}</li>;
-        })}
-      </ul>
+    <div className="App">
+      {/* <ToDoList /> */}
+      <Props />
     </div>
   );
 }
