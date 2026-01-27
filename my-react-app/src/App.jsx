@@ -1,15 +1,7 @@
 import "./App.css";
+import UserCard from "./UserCard";
 
-function UserCard({ name, age }) {
-  return (
-    <div className="user-card">
-      <p>Имя: {name}</p>
-      <p>Возраст: {age}</p>
-    </div>
-  );
-}
-
-function Props() {
+function App() {
   return (
     <div className="root">
       <UserCard name="Alex" age={30} />
@@ -21,4 +13,4 @@ function Props() {
   );
 }
 
-export default Props;
+export default App;
