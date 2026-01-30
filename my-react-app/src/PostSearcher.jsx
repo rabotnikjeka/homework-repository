@@ -4,11 +4,11 @@ import PostRender from "./PostRender";
 
 function PostSearcher() {
   const [inputValue, setInputValue] = useState("");
-  const [post, setPost] = useState("");
+  const [post, setPost] = useState(null);
   const [error, setError] = useState("");
 
   const handleClick = async () => {
-    if (inputValue <= 0) {
+    if (isNaN(inputValue) || inputValue <= 0) {
       setPost("");
       setError("Пост не найден");
       return;
@@ -35,9 +35,9 @@ function PostSearcher() {
     <div>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <input
-        type="text"
+        type="number"
         placeholder="введите id поста"
-        onChange={(event) => setInputValue(Number(event.target.value))}
+        onChange={(event) => setInputValue(event.target.value)}
       />
       <button onClick={handleClick}>найти пост</button>
       <div>{post && <PostRender {...post} />}</div>
