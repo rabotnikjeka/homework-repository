@@ -6,7 +6,7 @@ function ControlledForm() {
   const [password, setPassword] = useState("");
   const [errorName, setErrorName] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
-  const renders = useRef(0);
+
   const focusRef = useRef(null);
 
   useEffect(() => {
@@ -27,13 +27,13 @@ function ControlledForm() {
         setErrorName("Имя не должно быть пустым");
       }
     } else {
+      console.log("Логин и Пароль успешно приняты!");
       console.log(`Name:${name} Password:${password}`);
+      alert("Логин и Пароль успешно приняты!");
       setName("");
       setPassword("");
     }
   };
-
-  const renderCurrent = (renders.current += 1);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ function ControlledForm() {
       </div>
       <div>
         <input
-          type="text"
+          type="password"
           value={password}
           placeholder="password"
           onChange={(e) => {
@@ -63,7 +63,7 @@ function ControlledForm() {
         <p style={{ color: "red" }}>{errorName}</p>
         <p style={{ color: "red" }}>{errorPassword}</p>
       </div>
-      <RenderCounter renderCurrent={renders.current} />
+      <RenderCounter />
     </form>
   );
 }

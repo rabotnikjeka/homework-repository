@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-const CustomButton = forwardRef((propr, ref) => {
+const CustomButton = forwardRef((proprs, ref) => {
   return (
     <div>
       <button ref={ref}>Send</button>
