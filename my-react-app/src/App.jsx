@@ -1,11 +1,12 @@
 import "./App.css";
-import WindowSize from "./WindowSize";
+
+import UserCard from "./UserCard";
 
 function App() {
   return (
     <div>
-      <h1>CustomHook</h1>
-      <WindowSize />
+      <h1>Компонент высшего порядка</h1>
+      <UserCard />
     </div>
   );
 }
