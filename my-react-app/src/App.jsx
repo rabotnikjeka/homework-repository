@@ -1,11 +1,11 @@
 import "./App.css";
-import ControlledForm from "./ControlledForm";
+import WindowSize from "./WindowSize";
 
 function App() {
   return (
     <div>
-      <h1>Формы</h1>
-      <ControlledForm />
+      <h1>CustomHook</h1>
+      <WindowSize />
     </div>
   );
 }
