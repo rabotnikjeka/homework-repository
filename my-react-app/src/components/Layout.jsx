@@ -1,17 +1,15 @@
-import { Outlet } from "react-router-dom";
-import Navigation from "./Navigation";
-import "./Layout.css";
+import { Link, Outlet } from "react-router-dom";
 
 function Layout() {
   return (
     <div className="layout">
       <header className="header">
-        <h1>Мой Блог</h1>
+        <nav>
+          <Link to="/">Главная</Link>
+          <Link to="/posts">Посты</Link>
+        </nav>
       </header>
-
-      <Navigation />
-
-      <main className="main-content">
+      <main className="main">
         <Outlet />
       </main>
     </div>

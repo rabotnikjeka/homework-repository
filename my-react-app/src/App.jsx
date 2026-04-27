@@ -1,22 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import PostsFeed from "./components/PostsFeed";
-import About from "./components/About";
-import Feedback from "./components/Feedback";
-import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import PostsPage from "./pages/PostsPage.jsx";
+import PostDetailPage from "./pages/PostDetailPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: "posts",
+        element: <PostsPage />,
+
+        errorElement: <ErrorPage />,
+      },
+      { path: "posts/:id", element: <PostDetailPage /> },
+
+      { path: "*", element: <NotFoundPage /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<PostsFeed />} />
-          <Route path="about" element={<About />} />
-          <Route path="feedback" element={<Feedback />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
