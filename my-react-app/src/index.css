@@ -21,6 +21,9 @@ body {
   padding: 15px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header nav {
@@ -37,6 +40,11 @@ body {
   text-decoration: underline;
 }
 
+.user-info {
+  font-size: 14px;
+  color: #555;
+}
+
 .main {
   background: #fff;
   padding: 20px;
@@ -47,50 +55,10 @@ body {
   margin-bottom: 15px;
 }
 
-.posts-list {
-  list-style: none;
+.login-buttons {
   display: flex;
-  flex-direction: column;
   gap: 15px;
   margin-top: 20px;
-}
-
-.post-item {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-.post-item a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.post-item h3 {
-  margin-bottom: 8px;
-}
-
-.filter {
-  background: #ffeaa7;
-  padding: 8px 12px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.filter-controls {
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.filter-controls select {
-  padding: 6px 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  cursor: pointer;
 }
 
 button {
@@ -101,7 +69,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 15px;
 }
 
 button:hover {

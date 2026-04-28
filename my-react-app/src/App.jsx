@@ -1,34 +1,38 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import Layout from "./components/Layout.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import AdminRoute from "./components/AdminRoute.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import PostsPage from "./pages/PostsPage.jsx";
-import PostDetailPage from "./pages/PostDetailPage.jsx";
-import NotFoundPage from "./pages/NotFoundPage.jsx";
-import ErrorPage from "./pages/ErrorPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-
-    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "login", element: <LoginPage /> },
       {
-        path: "posts",
-        element: <PostsPage />,
-
-        errorElement: <ErrorPage />,
+        element: <ProtectedRoute />,
+        children: [{ path: "profile", element: <ProfilePage /> }],
       },
-      { path: "posts/:id", element: <PostDetailPage /> },
-
-      { path: "*", element: <NotFoundPage /> },
+      {
+        element: <AdminRoute />,
+        children: [{ path: "admin", element: <AdminPage /> }],
+      },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;
