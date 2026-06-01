@@ -1,5 +1,5 @@
-import Users from "./components/Users";
+import Posts from './components/Posts';
 
 export default function App() {
-  return <Users />;
+  return <Posts />;
 }
